@@ -1,6 +1,6 @@
 
 public abstract class Conta implements IConta {
-	
+
 	private static final int AGENCIA_PADRAO = 1;
 	private static int SEQUENCIAL = 1;
 
@@ -17,7 +17,12 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void sacar(double valor) {
-		saldo -= valor;
+		if (saldo > valor) {
+			saldo -= valor;
+		} else {
+			throw new SaldoException("Saldo insuficiente");
+		}
+
 	}
 
 	@Override

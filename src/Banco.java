@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
 
 	private String nome;
 	private List<Conta> contas;
+	private List<Cliente> clientes;
 
 	public String getNome() {
 		return nome;
@@ -21,4 +23,21 @@ public class Banco {
 		this.contas = contas;
 	}
 
+	@Override
+	public String toString() {
+		return "Banco Digital DIO!";
+	}
+	public Banco() {
+		this.contas = new ArrayList<>();
+		this.clientes = new ArrayList<>();
+	}
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	
 }
